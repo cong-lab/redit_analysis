@@ -10,7 +10,7 @@ Analysis script used for data analysis of gene-editing experiments used in REDIT
 All indel and HDR analysis are based on CRISPREsso2 pipeline:
 https://github.com/pinellolab/CRISPResso2
 
-Please refer to README_crispresso2.md for the detailed instructions on running and analyzing data for the indel and HDR editing events.
+Please refer to [CongLab_Indel-HDR_analysis_pipeline_README](https://github.com/cong-lab/redit_analysis/blob/master/README_crispresso2.md) for the detailed instructions on running and analyzing data for the indel and HDR editing events.
 
 # GUIDE-seq and off-target editing analysis pipeline from NGS data
 
