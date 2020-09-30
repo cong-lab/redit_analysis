@@ -25,9 +25,7 @@ Off-target analysis are done as described in iGUIDE with modification of the sub
 
 1. iguide.sh: Script for submitting iGUIDE analysis job based on config files and sample info files providede based on the experiments. Detailed config files and sample information files for the REDIT manuscript are found at the [subfolder containing off-target sample info and config files
 ](https://github.com/cong-lab/redit_analysis/tree/master/off-target_sample-info-config)
-https://github.com/cong-lab/redit_analysis/blob/master/iguide.sh
 
-2. iguide_clean.sh: Clean-up of the folder to remove temporary files in case of interruption or need for re-running the analysis with modified parameters: 
-https://github.com/cong-lab/redit_analysis/blob/master/iguide_clean.sh
+2. iguide_clean.sh: Clean-up of the folder to remove temporary files in case of interruption or need for re-running the analysis with modified parameters.
 
 
