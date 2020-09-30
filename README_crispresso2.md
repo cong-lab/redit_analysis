@@ -1,4 +1,4 @@
-# CRISPResso2 Workflow
+# Cong Lab Indel-HDR Analysis using CRISPResso2 Workflow
 
 Analyzing editing outcomes with CRISPResso2 on SCG
 Last updated on: 2020-03-23
