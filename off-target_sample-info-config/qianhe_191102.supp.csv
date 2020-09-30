@@ -1,0 +1,7 @@
+specimen,gRNA,effector
+Ectl,EMX1,no_effector
+ERecT,EMX1,RecT
+Vctl,VEGFA,no_effector
+VRecT,VEGFA,RecT
+Dctl,DYNLT1,no_effector
+DdnRecT,DYNLT1,RecT
