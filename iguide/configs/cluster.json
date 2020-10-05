@@ -1,0 +1,14 @@
+{
+  "__default__": {
+    "account": "congle",
+    "partition": "batch",
+    "time": "04:00:00",
+    "nodes": 1,
+    "ntasks": 1,
+    "cpus-per-task": 1,
+    "mem": "{resources.mem_mb}",
+    "job-name": "JOBNAME.{rule}.{wildcards}",
+    "output": "{RUN_DIR}/logs/{rule}.{wildcards}.out",
+    "error": "{RUN_DIR}/logs/{rule}.{wildcards}.err"
+  }
+}

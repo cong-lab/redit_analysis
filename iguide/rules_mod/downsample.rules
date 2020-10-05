@@ -1,0 +1,29 @@
+# -*- mode: Snakemake -*-
+# Sequence Downsampling Rules
+
+rule downsample_reads:
+  input:
+    R1 = RUN_DIR + "/process_data/demulti/{sample}.R1.fastq.gz",
+    R2 = RUN_DIR + "/process_data/demulti/{sample}.R2.fastq.gz",
+    I2 = RUN_DIR + "/process_data/demulti/{sample}.I2.fastq.gz"
+  output:
+    expand(
+      RUN_DIR + "/process_data/downsample/{{sample}}.{req_type}.fastq.gz",
+      req_type=REQ_TYPES
+    )
+  params:
+    R1 = RUN_DIR + "/process_data/downsample/{sample}.R1.fastq",
+    R2 = RUN_DIR + "/process_data/downsample/{sample}.R2.fastq",
+    I2 = RUN_DIR + "/process_data/downsample/{sample}.I2.fastq"
+  resources:
+    mem_mb=lambda wildcards, attempt: attempt * config["evaluateMB"]
+  shell:
+    """
+    seqtk sample -s69 {input.R1} config["Downsample"] > {params.R1}
+    seqtk sample -s69 {input.R2} config["Downsample"] > {params.R2}
+    seqtk sample -s69 {input.I2} config["Downsample"] > {params.I2}
+
+    gzip {params.R1}
+    gzip {params.R2}
+    gzip {params.I2}
+    """

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=default
-#SBATCH --partition=interactive
+#SBATCH --partition=batch
 #SBATCH --time=24:00:00
 #SBATCH --job-name="iguide"
 #SBATCH --nodes=1
@@ -14,12 +14,13 @@ module load seqtk
 module load anaconda
 source activate iguide
 
-iguide run configs/qianhe_191219_ds50k.config.yml -- \
+iguide setup configs/20191102.config.yml
+iguide run configs/20191102.config.yml -- \
     -j 24 \
     --resources mem_mb=120000 \
     --latency-wait 600 \
     --rerun-incomplete \
-    --cluster-config configs/scg.cluster.json \
+    --cluster-config configs/cluster.json \
     --cluster "sbatch \
         --account {cluster.account} \
         --partition {cluster.partition} \
