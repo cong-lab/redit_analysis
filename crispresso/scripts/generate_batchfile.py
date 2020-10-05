@@ -1,6 +1,5 @@
 """
 generate_batchfile.py
-2020-03-23
 
 description:
 Part of the Cong lab CRISPResso2 workflow. Script takes as input the Cong lab
@@ -50,7 +49,7 @@ def parse_args():
     return (samplesheet, outfile)
 
 
-def generate_r1(samplesheet, outfile):
+def generate(samplesheet, outfile):
     workdir = os.getcwd()
     outlines = list()
     sampledf = pd.read_csv(samplesheet)
@@ -68,14 +67,7 @@ def generate_r1(samplesheet, outfile):
             cleavage_offset = "1"
 
         outlines.append(
-            [
-                name,
-                fastq_r1,
-                amplicon_name,
-                amplicon_seq,
-                guide_seq,
-                cleavage_offset,
-            ]
+            [name, fastq_r1, amplicon_name, amplicon_seq, guide_seq, cleavage_offset,]
         )
 
     with open(outfile, "w+") as outhandle:
@@ -97,5 +89,5 @@ def generate_r1(samplesheet, outfile):
 
 if __name__ == "__main__":
     samplesheet, outfile = parse_args()
-    generate_r1(samplesheet, outfile)
-    print("Success! Output file: samples_batch.tsv")
+    generate(samplesheet, outfile)
+    print(f"Output file: {outfile}")

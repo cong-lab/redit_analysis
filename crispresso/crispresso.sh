@@ -7,8 +7,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
-#SBATCH -o /labs/congle/training/crispresso/logs/csp-batch-%A.out
-#SBATCH -e /labs/congle/training/crispresso/logs/csp-batch-%A.err
+#SBATCH -o /labs/congle/crispresso/logs/csp-batch-%A.out
+#SBATCH -e /labs/congle/crispresso/logs/csp-batch-%A.err
 
 module purge
 module load miniconda

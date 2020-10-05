@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --array=1-2
-#SBATCH -o /labs/congle/training/crispresso/logs/trimmerge-%A-%a.out
-#SBATCH -e /labs/congle/training/crispresso/logs/trimmerge-%A-%a.err
+#SBATCH -o /labs/congle/crispresso/logs/trimmerge-%A-%a.out
+#SBATCH -e /labs/congle/crispresso/logs/trimmerge-%A-%a.err
 
 module purge
 module load cutadapt/2.3

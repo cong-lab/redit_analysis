@@ -1,6 +1,5 @@
 """
 generate_trimmergefile.py
-2020-03-23
 
 description:
 Part of the Cong lab CRISPResso2 workflow. Script takes as input the Cong lab
@@ -66,7 +65,7 @@ def parse_args():
     return (samplesheet, fastq_dir, fastq_subdir, outfile)
 
 
-def generate_r1(samplesheet, fastq_dir, fastq_subdir, outfile):
+def generate(samplesheet, fastq_dir, fastq_subdir, outfile):
     workdir = os.getcwd()
     outlines = list()
     sampledf = pd.read_csv(samplesheet)
@@ -87,5 +86,5 @@ def generate_r1(samplesheet, fastq_dir, fastq_subdir, outfile):
 
 if __name__ == "__main__":
     samplesheet, fastq_dir, fastq_subdir, outfile = parse_args()
-    generate_r1(samplesheet, fastq_dir, fastq_subdir, outfile)
-    print("Success! Output file: samples_trimmerge.csv")
+    generate(samplesheet, fastq_dir, fastq_subdir, outfile)
+    print(f"Output file: {outfile}")
